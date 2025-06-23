@@ -8,8 +8,11 @@ const UseState = () => {
   return (
     <div className={`state ${theme}`}>
       <h1>UseState Component</h1>
-      <button onClick={() => setTheme("dark")}>Dark</button>
-      <button onClick={() => setTheme("light")}>Light</button>
+      <button 
+        onClick={
+          () => setTheme((prevTheme) => prevTheme === "light" ? "dark" : "light")
+          }>
+          Toggle Theme</button>
       <h2>{count}</h2>
       <button onClick={() => setCount((prevCount) => prevCount + 1)}>
         Increment
